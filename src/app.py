@@ -133,3 +133,5 @@ def update_map(selected_year, selected_municipio, show_borders):
 
 if __name__ == '__main__':
     app.run_server(debug=False)
+
+
