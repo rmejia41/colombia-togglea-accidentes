@@ -18,7 +18,7 @@ if not MAPBOX_ACCESS_TOKEN:
 px.set_mapbox_access_token(MAPBOX_ACCESS_TOKEN)
 
 # Load the data
-data_path = 'C:/Users/Biu9/Desktop/Homicidios Accidentes Colombia/Cleaned_Homicidios_Accidentes_Trafico_C.xlsx'
+data_path = 'https://github.com/rmejia41/open_datasets/raw/main/Cleaned_Homicidios_Accidentes_Trafico_C.xlsx'
 data = pd.read_excel(data_path)
 
 # # Load GeoJSON for municipalities and departments using Geopandas
