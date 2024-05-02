@@ -28,8 +28,8 @@ data = pd.read_excel(data_path)
 # departments = gpd.read_file(departments_geojson_path)
 
 # Load GeoJSON for municipalities and departments using Geopandas
-municipalities_geojson_path = 'geojson/Subregiones_Provincias_de_Colombia.geojson'
-departments_geojson_path = 'geojson/colombia-with-regions_1430.geojson'
+municipalities_geojson_path = 'Subregiones_-_Provincias_de_Colombia.geojson'
+departments_geojson_path = 'colombia-with-regions_1430.geojson'
 municipalities = gpd.read_file(municipalities_geojson_path)
 departments = gpd.read_file(departments_geojson_path)
 
