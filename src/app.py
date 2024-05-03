@@ -23,9 +23,9 @@ data = pd.read_excel(data_path)
 
 # # Load GeoJSON for municipalities and departments using Geopandas
 municipalities_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Servicios_Publicos_Municipios.json'
-# departments_geojson_path = 'C:/Users/Biu9/Desktop/Homicidios Accidentes Colombia/colombia-with-regions_1430.geojson'
+#departments_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Subregiones_Provincias_de_Colombia.json'
 municipalities = gpd.read_file(municipalities_geojson_path)
-# departments = gpd.read_file(departments_geojson_path)
+#departments = gpd.read_file(departments_geojson_path)
 
 # Load GeoJSON for municipalities and departments using Geopandas
 #municipalities_geojson_path = 'Subregiones_-_Provincias_de_Colombia.geojson'
@@ -34,7 +34,6 @@ departments_geojson_path = 'colombia-with-regions_1430.geojson'
 departments = gpd.read_file(departments_geojson_path)
 
 #print(municipalities.columns)
-
 
 # Normalize 'MUNICIPIO' column to uppercase and remove any potential leading/trailing whitespaces
 data['MUNICIPIO'] = data['MUNICIPIO'].str.upper().str.strip()
