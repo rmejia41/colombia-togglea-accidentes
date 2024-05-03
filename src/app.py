@@ -134,6 +134,6 @@ def update_map(selected_year, selected_municipio, show_borders):
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=False, port=8064)
 
 
