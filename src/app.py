@@ -22,16 +22,19 @@ data_path = 'https://github.com/rmejia41/open_datasets/raw/main/Cleaned_Homicidi
 data = pd.read_excel(data_path)
 
 # # Load GeoJSON for municipalities and departments using Geopandas
-# municipalities_geojson_path = 'C:/Users/Biu9/OneDrive - CDC/Python files/Colombia/geojson municipalities/Subregiones_Provincias_de_Colombia.geojson'
+municipalities_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Servicios_Publicos_Municipios.json'
 # departments_geojson_path = 'C:/Users/Biu9/Desktop/Homicidios Accidentes Colombia/colombia-with-regions_1430.geojson'
-# municipalities = gpd.read_file(municipalities_geojson_path)
+municipalities = gpd.read_file(municipalities_geojson_path)
 # departments = gpd.read_file(departments_geojson_path)
 
 # Load GeoJSON for municipalities and departments using Geopandas
-municipalities_geojson_path = 'Subregiones_-_Provincias_de_Colombia.geojson'
+#municipalities_geojson_path = 'Subregiones_-_Provincias_de_Colombia.geojson'
 departments_geojson_path = 'colombia-with-regions_1430.geojson'
-municipalities = gpd.read_file(municipalities_geojson_path)
+#municipalities = gpd.read_file(municipalities_geojson_path)
 departments = gpd.read_file(departments_geojson_path)
+
+#print(municipalities.columns)
+
 
 # Normalize 'MUNICIPIO' column to uppercase and remove any potential leading/trailing whitespaces
 data['MUNICIPIO'] = data['MUNICIPIO'].str.upper().str.strip()
@@ -118,7 +121,7 @@ def update_map(selected_year, selected_municipio, show_borders):
         choropleth_trace = px.choropleth_mapbox(
             municipalities, geojson=municipalities.geometry, locations=municipalities.index, opacity=0.5,
             color_discrete_sequence=["#666666"],
-            hover_name='NOM_SUBREGION'
+            hover_name='MPIO_CNMBR'
         ).data[0]
         fig.add_trace(choropleth_trace)
     elif show_borders == 'departments':
