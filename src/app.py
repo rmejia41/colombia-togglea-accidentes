@@ -22,7 +22,7 @@ data_path = 'https://github.com/rmejia41/open_datasets/raw/main/Cleaned_Homicidi
 data = pd.read_excel(data_path)
 
 # # Load GeoJSON for municipalities and departments using Geopandas
-municipalities_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Servicios_Publicos_Municipios.json'
+municipalities_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Servicios_Publicos_Municipios_c.json'
 #departments_geojson_path = 'https://github.com/rmejia41/open_datasets/raw/main/Subregiones_Provincias_de_Colombia.json'
 municipalities = gpd.read_file(municipalities_geojson_path)
 #departments = gpd.read_file(departments_geojson_path)
@@ -134,6 +134,4 @@ def update_map(selected_year, selected_municipio, show_borders):
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8064)
-
-
+    app.run_server(debug=False, port=8051)
